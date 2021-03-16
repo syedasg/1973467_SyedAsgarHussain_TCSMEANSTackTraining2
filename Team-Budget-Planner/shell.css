@@ -1,0 +1,32 @@
+div{
+  padding: 150px;
+  border: solid black 10px;
+ 
+
+
+}
+
+h2.headertekst {
+  text-align: center;
+}
+
+table, th, td {
+
+  }
+  table.center {
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+  h1 {
+    color:black;
+    font-size: 50px;
+    display: block;
+   margin-top: 0.67em;
+   margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  align-self: center;
+  }

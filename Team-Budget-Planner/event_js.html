@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function display() {
+            alert("Welcome to JS Function")
+        }
+
+        function addName() {
+        //retrieve the value using name attribute 
+        // two tag can contains same name.
+        //var name = document.getElementsByName("user")[0].value;
+        //alert("Welcome "+name);
+        // retrieve the value using id attribute. 
+        // id must be unique in web page. 
+        //var name = document.getElementById("user").value;
+        //alert("Name is "+name);
+        /*
+        var fname = document.getElementsByName("user")[0].value;
+        alert("Welcome "+fname);
+        var lname = document.getElementsByName("user")[1].value;
+        alert("Welcome "+lname);*/
+
+        var fname = document.getElementById("user").value;
+        alert("FName is "+fname);
+        var lname = document.getElementById("user").value;
+        alert("LName is "+lname);    
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="Click Here!" onclick="display()"/><br/>
+<input type="button" value="onMouse Over" onmousemove="display()"/><br/>
+<label>FNane</label>
+<input type="text" name="user" id="user"/>
+<label>LName</label>
+<input type="text" name="user" id="user"/>
+<br/>
+<input type="button" value="Add Name" onclick="addName()"/>
+</body>
+</html>
