@@ -72,10 +72,7 @@ function retrieveFromStorage() {
 
 function insertNewRecord(data){
 
-   // totalBudget=totalBudget+parseInt(data.budget);
-   // var table = document.createElement('table');
-     //   table.setAttribute('border','1');
-        //table.setAttribute('width','100%')
+ 
     var table = document.getElementById("blogList");
     var body = table.getElementsByTagName("tbody")[0];
     var newRow = body.insertRow(body.length);  // row created 

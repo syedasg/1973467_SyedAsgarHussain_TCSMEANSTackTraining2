@@ -1,0 +1,55 @@
+<p>portfolio works!</p>
+
+<div class="text-center">
+    <h2 tyle=" color: brown; font-weight: bold; font-size: 40px;">My Portfolio</h2>
+    
+</div>
+<div class="text-end">
+    <h3 style=" color: rgb(8, 2, 2); font-weight: bold; font-size: 20px;">WELCOME {{username}}</h3>
+    
+</div>
+
+<form class="col-lg-6 offset-md-4" [formGroup]="contactRef" (ngSubmit)="addContact()">
+    <div class="row mb-3">
+        <label for="cName" class="col-sm-2 col-form-label">Contact Name</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" formControlName="cName" required>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="cNo" class="col-sm-2 col-form-label">Contact No.</label>
+        <div class="col-sm-8">
+            <input type="number" class="form-control" formControlName="cNo" required>
+        </div>
+    </div>
+    <div class="row mb-3 text-center">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-1"></div>
+        <input class="btn btn-primary col-sm-3" type="submit" value="Add" />
+        <div class="col-sm-1"></div>
+        <input class="btn btn-secondary col-sm-3" type="reset" value="Reset" />
+        <div class="col-sm-1"></div>
+    </div>
+</form>
+
+<div class="container">
+    <h3 class="text-center">Contact Details</h3>
+
+    <table class="table table-bordered">
+        <thead thead-dark>
+            <tr>
+                <th scope="col">Contact Name</th>
+                <th scope="col">Contact Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr scope="row" *ngFor="let contact of contacts">
+                <td>{{contact.name}}</td>
+                <td>{{contact.number}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary " (click)=logOut()>Log Out</button>
+</div>
