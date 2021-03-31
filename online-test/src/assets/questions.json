@@ -1,0 +1,114 @@
+{
+    "questions": [
+        {
+            "id": 1,
+            "question": " Which of these is an incorrect array declaration?",
+            "answer": "int arr[] = int [5] new",
+            "options": [
+                "int arr[] = new int[5]",
+                "int [] arr = new int[5]",
+                "int arr[] = new int[5]",
+                "int arr[] = int [5] new"
+            ]
+        },
+        {
+            "id": 2,
+            "question": " Which of the following is a type of polymorphism in Java?",
+            "answer": "Compile time polymorphism",
+            "options": [
+                "Compile time polymorphism",
+                "Execution time polymorphism",
+                "Multiple polymorphism",
+                "Multilevel polymorphism"
+            ]
+        },
+        {
+            "id": 3,
+            "question": "When does method overloading is determined?",
+            "answer": "At compile time",
+            "options": [
+                "At run time",
+                "At compile time",
+                "At coding time",
+                "At execution time"
+            ]
+        },
+        {
+            "id": 4,
+            "question": "HTML stands for?",
+            "answer": "Hyper Text Markup Language",
+            "options": [
+                "Hyper Text Markup Language",
+                "High Text Markup Language",
+                "Hyper Tabular Markup Language",
+                "None of these"
+            ]
+        },
+        {
+            "id": 5,
+            "question": "The attribute of <form> tag ?",
+            "answer": "Both Method & Action",
+            "options": [
+                "Method",
+                "Action",
+                "Both Method & Action",
+                "None of these"
+            ]
+        },
+        {
+            "id": 6, 
+            "question": "Apart from <b> tag, what other tag makes text bold ?",
+            "answer": "<strong>",
+            "options": [
+                "<fat>",
+                "<strong>",
+                "<black>",
+                "<emp>"
+            ]
+        },
+        {
+            "id": 7,
+            "question": "In JavaScript, what is a block of statement?",
+            "answer": "block that combines a number of statements into a single compound statement",
+            "options": [
+                "Conditional block",
+                "block that combines a number of statements into a single compound statement",
+                "both conditional block and a single statement",
+                "block that contains a single statement"
+            ]
+        },
+        {
+            "id": 8, 
+            "question": "Which of the following function of the String object returns the character in the string starting at the specified position via the specified number of characters?",
+            "answer": "substr()",
+            "options": [
+                "slice()",
+                "split()",
+                "substr()",
+                "search()"
+            ]
+        },
+        {
+            "id": 9,
+            "question": " What is the decorator used for configuring your module class?",
+            "answer": "@NgModule",
+            "options": [
+                "@NgModule",
+                "@NgApp",
+                "@Service",
+                "@Injectable"
+            ]          
+        },
+        {
+            "id": 10,
+            "question": "What is .subscribe?",
+            "answer": "Both",
+            "options": [
+                "Streams data in asynchronously",
+                "Streams data in synchronously",
+                "Both",
+                "None"
+            ]
+        }
+    ]
+}

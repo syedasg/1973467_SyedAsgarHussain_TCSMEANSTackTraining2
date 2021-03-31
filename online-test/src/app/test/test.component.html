@@ -1,0 +1,78 @@
+<div *ngIf="questionsAns<10" class="mx-auto" style="width: 600px;">
+    <div class="row">
+        <div class="span6" style="float: none; margin: 0 auto;">
+
+            <form [formGroup]="form" (ngSubmit)="save()">
+                <div class="container mt-sm-5 my-1">
+                    <div>
+                        <div class="py-2 h5"><b>{{questionsAns + 1}}. {{currentQuestion.question}}</b></div>
+                        <div class="form-group ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options"
+                            *ngFor="let option of currentQuestion.options">
+                            <label >
+                                <input id="option" type="radio" value="{{option}}" name="option"
+                                    formControlName="option"> <span></span>{{option}} </label>
+
+                        </div>
+                        <div class="d-flex align-items-center pt-3">
+                            <button [attr.data-bs-toggle]="questionsAns !== 9 ? false:'modal' "
+                                [attr.data-bs-target]="questionsAns !== 9 ? false:'#exampleModal'"
+                                class="ml-auto mr-sm-5 btn btn-success" type="submit"
+                                [disabled]="!form.valid">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+
+
+        </div>
+
+
+    </div>
+</div>
+<div *ngIf="questionsAns==10" class="mx-auto done" style="width: 600px;">
+    <h1>Test completed.<br/><br/> Click to ReAttempt <button class="btn btn-secondary"
+            (click)="reload()">Retry</button></h1>
+</div>
+
+
+<div class="modal fade" data-backdrop="false" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" data-container="body">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Test Completed!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                
+                <div class="modal-body">
+                    <b>Correct Answers:</b>
+                    <div *ngFor="let ans of correctAns">
+                        <div class="py-2 alert-success"><b>#{{ans.id}}. {{ans.question}}</b></div>
+                    </div>
+                    <b>Wrong Answers:</b>
+                    <div *ngFor="let ans of incorrectAns">
+                        <div class="py-2 alert-danger"><b>#{{ans.id}}. {{ans.question}}</b></div>
+                        <div class="py-2 alert-info"> <b>Answer:</b> {{ans.answer}} </div>
+                    </div>
+                </div>
+                <div *ngIf="actualAns > 5" class="modal-body alert alert-success">
+                    You got {{actualAns}} / {{questionNo}} Passed!
+                </div>
+                <div *ngIf="actualAns < 6" class="modal-body alert alert-danger">
+                    You got {{correctAns.length}} / {{questionNo}} Retry.
+                    <button (click)="reload()" type="button" class="btn btn-warning"
+                        data-bs-dismiss="modal">Retry</button>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
