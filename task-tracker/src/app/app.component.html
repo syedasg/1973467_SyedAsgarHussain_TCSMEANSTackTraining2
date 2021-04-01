@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row">
+    <h1 style="text-align:center">Task Tracker</h1>
+  </div>
+  <div class="row align-items-end">
+    <div class="col">
+      <h3 style="text-align:center">To Do Task</h3>
+      <div class="form">
+      <form #registeration="ngForm" (ngSubmit)="onSubmit(registeration.value)" >
+        <mat-form-field class="example-full-width">
+          <mat-label>ID</mat-label>
+          <input matInput value="id" name="id" [(ngModel)]="userId">
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Name</mat-label>
+          <input matInput value="name" name="firstName" [(ngModel)]="firstName">
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Task</mat-label>
+          <input matInput value="task" name="task" [(ngModel)]="task">
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Dead Line</mat-label>
+          <input matInput [matDatepicker]="picker" value="date" name="date" [(ngModel)]="date">
+          <mat-datepicker-toggle matSuffix [for]="picker">
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <br />
+        <button mat-raised-button class="mr-1" color="primary" type="submit" style="margin-right:20px">Submit</button>
+        <button mat-raised-button class="mr-1" color="warn" type="reset">Reset</button>
+      </form>
+      </div>
+    </div>
+    <div class="col">
+      <h3 style="text-align:center;color:blue">To Do List</h3>
+      <div>
+      
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+       
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Emp Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+      
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.userFirstName}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="task">
+          <th mat-header-cell *matHeaderCellDef> Task </th>
+          <td mat-cell *matCellDef="let element"> {{element.userTask}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="userDate">
+          <th mat-header-cell *matHeaderCellDef> Deadline </th>
+          <td mat-cell *matCellDef="let element"> {{element.userDate}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+      </div>
+    </div>
+  </div>
+</div>
