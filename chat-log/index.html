@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat-log-app</title>
+   <h1>Chat-Log-App</h1>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+    var socket = io(); 
+        function addData() {
+        var Obj = {}
+            Obj.name = document.getElementById("name").value;
+            Obj.message = document.getElementById("message").value;
+            socket.emit("chat",Obj);
+            document.getElementById("name").value = "";
+            document.getElementById("message").value = "";
+
+    }
+
+    </script>
+</head>
+<body style="background-color:grey;">
+    <table>
+    <form>
+        <tr>
+        <td><label>Name: </label> </td>
+        <td><input type="text" id="name" /> </td>
+        </tr>
+        <tr>
+            <td> <label>Message: </label></td>
+                <td><input type="text" id="message" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Send To Server" onclick="addData()" /></td> </tr>
+    </form>
+    <table>
+</body>
+</html>
